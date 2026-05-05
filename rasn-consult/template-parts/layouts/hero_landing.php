@@ -23,6 +23,11 @@ endif;
 $show_slider = get_sub_field('show_slider');
 $hl_slider = get_sub_field('hl_slider');
 
+$hl_show_app_download = get_sub_field('hl_show_app_download');
+$hl_app_download_text = get_sub_field('hl_app_download_text');
+$play_store_link = get_sub_field('play_store_link');
+$app_store_link = get_sub_field('app_store_link');
+
 
 ?>
 
@@ -139,6 +144,26 @@ $hl_slider = get_sub_field('hl_slider');
                             });
                         });
                     </script>
+                <?php endif; ?>
+
+                <?php if($hl_show_app_download): ?>
+
+                    <div class="app-download-wrapper">
+                        <span><?= $hl_app_download_text ?></span>
+                        <div class="app-download-links mt-3">
+                            <?php if($play_store_link): ?>
+                                <a href="<?= esc_url($play_store_link['url']) ?>" target="<?= esc_attr($play_store_link['target'] ?: '_self') ?>" class="app-link play-store">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/play-store-badge.png" alt="Download on Play Store" />
+                                </a>
+                            <?php endif; ?>
+                            <?php if($app_store_link): ?>
+                                <a href="<?= esc_url($app_store_link['url']) ?>" target="<?= esc_attr($app_store_link['target'] ?: '_self') ?>" class="app-link app-store">
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/app-store-badge.png" alt="Download on App Store" />
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
                 <?php endif; ?>
             </div>
 

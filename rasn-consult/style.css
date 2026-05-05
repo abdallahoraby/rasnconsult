@@ -9,6 +9,16 @@ Template: seofy
 Text Domain: seofy
 */
 
+/* Ensure custom font is loaded from the theme assets directory */
+@font-face {
+  font-family: "Saudia Sans";
+  src: url("assets/fonts/saudia-sans-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
   --brand: #4b6bfb;
   --brand-2: #2d3bb7;
@@ -30,8 +40,12 @@ Text Domain: seofy
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Saudia Sans', Arial, sans-serif;
   overflow-x: hidden;
+}
+
+body p, body h1, body h2, body h3, body h4, body h5, body h6, body a, body span {
+  font-family: 'Saudia Sans';
 }
 
 
@@ -369,10 +383,10 @@ nav.nav a {
 }
 
 .nav .header-btn {
-  background: linear-gradient(90deg, rgba(97, 118, 253, 0.75) 8.33%, #6176FD 44.23%, #495AC8 100%);
   padding: 0.5rem 2rem;
   border-radius: 10px;
   color: #fff;
+  background: linear-gradient(90deg, #90CBE3 0%, #2FA7E1 60.58%, #3199D7 87.5%);
 }
 
 .nav .header-btn.style-secondary{
@@ -2813,6 +2827,7 @@ main.landing-page.schema-secondary {
   padding: 0.95rem 1.5rem;
   font-weight: normal;
   font-size: 1rem;
+  font-family: 'Saudia Sans';
 }
 
 .landing-page span.check-mark {
@@ -2833,7 +2848,18 @@ main.landing-page.schema-secondary {
   color: white;
 }
 
+.btn-primary-v2 {
+  background: linear-gradient(90deg, #90CBE3 0%, #2FA7E1 60.58%, #3199D7 87.5%);
+  border: 0;
+  box-shadow: 0 16px 30px rgba(86, 96, 234, 0.24);
+  color: white;
+}
+
 .btn-primary:hover {
+  color: white;
+}
+
+.btn-primary-v2:hover {
   color: white;
 }
 
@@ -4942,4 +4968,119 @@ ul.icon-box-wrapper li h5 {
   margin-top: 1rem;
 }
 
+.image-panel {
+  overflow: hidden !important;
+}
 
+
+
+section.image-slider-section {
+  padding: 5rem 0;
+}
+
+section.image-slider-section .slider-gallery-wrapper img {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+
+section.image-slider-section h3 {
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+
+
+section.image-slider-section p {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+
+section.image-slider-section .carousel-indicators {
+  position: relative;
+  margin: 1rem 0 0 0;
+}
+
+section.image-slider-section .carousel-indicators button {
+  width: 26px !important;
+  background: #ecd1d1 !important;
+  padding: 0 !important;
+  height: 9px !important;
+  display: block;
+  margin-bottom: 0 !important;
+  border: 0 !important;
+}
+
+section.image-slider-section .carousel-indicators button.active{
+  background: #b41b1e !important;
+}
+
+
+
+.hero-info-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-info-wrapper > .row {
+  display: flex;
+  height: 100vh;
+}
+
+.hero-info-wrapper * {
+  color: #fff;
+}
+
+.hero-info-wrapper h1 {
+  font-family: 'Saudia Sans';
+  font-weight: 700;
+  font-size: 4.5rem;
+}
+
+.hero-info-wrapper h3 {
+  font-family: 'Saudia Sans';
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.hero-info-wrapper p {
+  font-family: 'Saudia Sans';
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+span.colored-heading {
+  font-family: 'Saudia Sans';
+  background: linear-gradient(90deg, #90CBE3 0%, #2FA7E1 60.58%, #3199D7 87.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.app-download-wrapper {
+  margin: 3rem 0 1rem 0;
+}
+
+.app-download-wrapper span {
+  font-family: 'Saudia Sans';
+  font-weight: 500;
+  font-size: 1rem;
+  color: #000;
+}
+
+.app-download-links a img {
+  width: 150px;
+  object-fit: contain;
+  height: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.app-download-links a:hover img {
+  transform: scale(1.05);
+}

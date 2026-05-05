@@ -1612,6 +1612,61 @@ acf_add_local_field_group(array(
 							),
 						),
                         array(
+                            'key'           => 'field_hl_show_app_download',
+                            'label'         => 'Show App Download Buttons?',
+                            'name'          => 'hl_show_app_download',
+                            'type'          => 'true_false',
+                            'ui'            => 1,
+                            'default_value' => 0,
+                            'ui_on_text' => 'Show',
+                            'ui_off_text' => 'Hide',
+                        ),
+                        array(
+                            'key' => 'field_hl_app_download_text',
+                            'label' => 'Apps Download Text',
+                            'name' => 'hl_app_download_text',
+                            'type' => 'text',
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field'    => 'field_hl_show_app_download',
+                                        'operator' => '==',
+                                        'value'    => '1',
+                                    )
+                                )
+                            )
+                        ),
+                        array(
+                            'key'   => 'field_hl_play_store_link',
+                            'label' => 'Play Store Link',
+                            'name'  => 'play_store_link',
+                            'type'  => 'link',
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field'    => 'field_hl_show_app_download',
+                                        'operator' => '==',
+                                        'value'    => '1',
+                                    )
+                                )
+                            )
+                        ),
+                        array(
+                            'key'   => 'field_hl_app_store_link',
+                            'label' => 'Apple App Store Link',
+                            'name'  => 'app_store_link',
+                            'type'  => 'link',
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field'    => 'field_hl_show_app_download',
+                                        'operator' => '==',
+                                        'value'    => '1',
+                                    )
+                                )
+                            )
+                        ),
+                        array(
                             'key'           => 'field_hl_show_slider',
                             'label'         => 'Image / Slider',
                             'name'          => 'show_slider',
@@ -3292,6 +3347,146 @@ acf_add_local_field_group(array(
                             'allow_in_bindings' => 1,
                         ),
                     ),
+                ),
+                // New Layout: Image Slider
+                'layout_image_slider' => array(
+                    'key' => 'layout_image_slider',
+                    'name' => 'image_slider',
+                    'label' => 'Image Slider',
+                    'display' => 'block',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_section_id_36',
+                            'label' => 'Section ID',
+                            'name' => 'section_id',
+                            'type' => 'text',
+                            'instructions' => 'use the ID with the right nav menu to scroll to section'
+                        ),
+                        array(
+                            'key' => 'field_bg_color_36',
+                            'label' => 'Background Color',
+                            'name' => 'background_color',
+                            'type' => 'extended-color-picker',
+                            'default_value' => '',
+                            'color_palette' => '',
+                            'hide_palette' => 0,
+                            'allow_in_bindings' => 1,
+                        ),
+                        array(
+                            'key' => 'field_image_slider_title',
+                            'label' => 'Title',
+                            'name' => 'title',
+                            'type' => 'text',
+                        ),
+                        array(
+                            'key' => 'field_image_slider_sub_title',
+                            'label' => 'Sub Title',
+                            'name' => 'sub_title',
+                            'type' => 'textarea',
+                            'rows' => 3,
+                            'new_lines' => 'br',
+                        ),
+                        array(
+                            'key' => 'field_image_slider_slider',
+                            'label' => 'Slider',
+                            'name' => 'slider',
+                            'type' => 'gallery',
+                            'preview_size' => 'medium',
+                            'insert' => 'append',
+                            'library' => 'all',
+                        ),
+                    ),
+                    'min' => '',
+                    'max' => '',
+                ),
+                // New Layout: Hero Infographic
+                'layout_hero_infographic' => array(
+                    'key' => 'layout_hero_infographic',
+                    'name' => 'hero_infographic',
+                    'label' => 'Hero Infographic',
+                    'display' => 'block',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_hi_bg_image',
+                            'label' => 'Background Image',
+                            'name' => 'hi_background_image',
+                            'type' => 'image',
+                            'return_format' => 'url',
+                            'preview_size' => 'medium',
+                        ),
+                        array(
+                            'key'   => 'field_hi_title',
+                            'label' => 'Title',
+                            'name'  => 'title',
+                            'type'  => 'textarea',
+                            'rows'  => 3,
+                            'instructions' => 'Use HTML like <span class="text-primary">...</span> for highlight.',
+                        ),
+                        array(
+                            'key'   => 'field_hi_desc',
+                            'label' => 'Description',
+                            'name'  => 'description',
+                            'type'  => 'textarea',
+                            'rows'  => 3,
+                        ),
+                        array(
+                            'key'          => 'field_hi_buttons',
+                            'label'        => 'Buttons',
+                            'name'         => 'buttons',
+                            'type'         => 'repeater',
+                            'layout'       => 'table',
+                            'button_label' => 'Add Button',
+                            'sub_fields'   => array(
+                                array(
+                                    'key'   => 'field_hi_btn_text',
+                                    'label' => 'Button Text',
+                                    'name'  => 'text',
+                                    'type'  => 'text',
+                                ),
+                                array(
+                                    'key'   => 'field_hi_popup_make',
+                                    'label' => 'Open Popup',
+                                    'name'  => 'open_popup',
+                                    'type'  => 'text',
+                                ),
+                                array(
+                                    'key'   => 'field_hi_btn_icon',
+                                    'label' => 'Icon',
+                                    'name'  => 'icon',
+                                    'type'  => 'font-awesome',
+                                    'icon_sets' => array(
+                                        0 => 'fas',
+                                        1 => 'far',
+                                        2 => 'fal',
+                                        3 => 'fab',
+                                    ),
+                                    'save_format' => 'element',
+                                    'allow_null' => 1,
+                                    'show_preview' => 1,
+                                ),
+                                array(
+                                    'key'   => 'field_hi_btn_link',
+                                    'label' => 'Button Link',
+                                    'name'  => 'link',
+                                    'type'  => 'link',
+                                ),
+                                array(
+                                    'key'   => 'field_hi_btn_style',
+                                    'label' => 'Button Style',
+                                    'name'  => 'style',
+                                    'type'  => 'select',
+                                    'choices' => array(
+                                        'btn-primary' => 'Primary (Solid)',
+                                        'btn-primary-v2' => 'Primary (Solid V2)',
+                                        'btn-outline-secondary' => 'Secondary (Outline)',
+                                    ),
+                                    'default_value' => 'btn-primary',
+                                ),
+                            ),
+                        ),
+                    ),
+                    'min' => '',
+                    'max' => '',
                 ),
 			),
 			'button_label' => 'Add Row',

@@ -27,6 +27,12 @@ Text Domain: seofy
   --soft: #f6f8ff;
   --card: #ffffff;
   --border: #e5e7eb;
+  --oc-bg-start: #eef4fb;
+  --oc-bg-end: #f5f8fc;
+  --oc-text: #0f172a;
+  --oc-muted: #475569;
+  --oc-border: #e2e8f0;
+  --oc-card-bg: #ffffff;
 }
 
 *,
@@ -5131,5 +5137,58 @@ span.colored-heading {
   border: 1.18px solid rgba(47, 167, 225, 1);
 }
 
+/***************
+ Clients V2
+****************/
 
+.our-clients__panel {
+  background: linear-gradient(135deg, var(--oc-bg-start), var(--oc-bg-end));
+  border: 1px solid var(--oc-border);
+  padding: 3rem 5rem;
+}
 
+.our-clients__title {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  color: var(--oc-text);
+  letter-spacing: -0.01em;
+}
+
+.our-clients__lead {
+  color: var(--oc-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.our-clients__stat {
+  background: var(--oc-card-bg);
+  border: 1px solid var(--oc-border);
+  color: var(--oc-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 110px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.our-clients__stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.our-clients__logos img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(0);
+  opacity: 0.95;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.our-clients__logos img:hover {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+@media (max-width: 575.98px) {
+  .our-clients__panel { padding: 1.25rem; }
+  .our-clients__logos img { max-height: 36px; }
+}

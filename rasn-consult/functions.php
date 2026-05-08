@@ -756,6 +756,16 @@ acf_add_local_field_group(array(
                             'allow_in_bindings' => 1,
                         ),
                         array(
+                            'key' => 'field_bg_color_inner_33',
+                            'label' => 'Inner Wrapper Background Color',
+                            'name' => 'inner_background_color',
+                            'type' => 'extended-color-picker',
+                            'default_value' => '',
+                            'color_palette' => '',
+                            'hide_palette' => 0,
+                            'allow_in_bindings' => 1,
+                        ),
+                        array(
                             'key' => 'field_client_v2_title',
                             'label' => 'Section Title',
                             'name' => 'title',
@@ -764,8 +774,8 @@ acf_add_local_field_group(array(
                         ),
                         array(
                             'key' => 'field_client_v2_desc',
-                            'label' => 'Lead Text',
-                            'name' => 'lead_text',
+                            'label' => 'Description',
+                            'name' => 'description',
                             'type' => 'textarea',
                             'rows' => 3,
                         ),

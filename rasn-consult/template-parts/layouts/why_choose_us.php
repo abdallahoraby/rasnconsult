@@ -12,11 +12,19 @@ if( $background_color ):
     $section_style .= ' style="background: ' . esc_attr($background_color) . ';"';
 endif;
 
-$inner_section_style = '';
+$inner_section_style = 'style="';
 $inner_background_color = get_sub_field('inner_background_color');
-if( $inner_background_color ):
-    $inner_section_style .= ' style="background: ' . esc_attr($inner_background_color) . ';"';
+$inner_background_image = get_sub_field('inner_background_image');
+
+if( $inner_background_image ):
+    $inner_section_style .= ' background-image: url(' . $inner_background_image . '); background-size: cover;background-position: center;background-repeat: no-repeat;background-blend-mode: multiply;';
 endif;
+
+if( $inner_background_color ):
+    $inner_section_style .= ' background-color: ' . $inner_background_color . ';';
+endif;
+
+$inner_section_style .= '"';
 
 $why_choose_images = get_sub_field('why_choose_images');
 

@@ -5042,6 +5042,10 @@ section.image-slider-section .carousel-indicators button.active{
   background-position: center;
   z-index: 1;
   position: relative;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .hero-info-wrapper > .row {
@@ -5106,6 +5110,7 @@ span.colored-heading {
 .hero-counters-wrapper {
   background: #f9fafc;
   position: relative;
+  margin-top: -5rem;
 }
 
 .has-wavy-circle:after {
@@ -5130,7 +5135,7 @@ span.colored-heading {
   height: 50px;
   background: #fff;
   position: absolute;
-  top: 10px;
+  top: 118px;
   left: 50%;
   border-radius: 100%;
   z-index: 1;
@@ -5138,6 +5143,7 @@ span.colored-heading {
   border-top: 0;
   border-left: 0.5px;
   border-right: 0.5px;
+  transform: translateX(-50%);
 }
 
 .hero-counters-wrapper img {
@@ -5145,7 +5151,57 @@ span.colored-heading {
   box-shadow: 3.55px 4.73px 4.73px 0px rgba(162, 162, 162, 0.25);
   box-shadow: 0px 4.73px 4.73px 0px rgba(0, 0, 0, 0.25) inset;
   border: 1.18px solid rgba(47, 167, 225, 1);
+  position: relative;
+  z-index: 2;
 }
+
+.counters-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  height: 100%;
+  gap: 1rem;
+}
+
+.counters-grid .counter-card {
+  border-radius: 12.72px;
+  border: 1px solid rgba(47, 167, 225, 0.4);
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+.counters-grid .counter-card strong {
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 2.6rem;
+  color: rgba(0, 171, 212, 1);
+}
+
+.counters-grid .counter-card span {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: rgba(0, 171, 212, 1);
+  position: relative;
+}
+
+.counters-grid .counter-card span:after {
+  content: '';
+  width: 50%;
+  height: 3px;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  background: linear-gradient(90deg, #90CBE3 0%, #2FA7E1 60.58%, #3199D7 87.5%);
+  opacity: 0.7;
+}
+
+
 
 /***************
  Clients V2
@@ -5258,7 +5314,7 @@ span.colored-heading {
 }
 
 .choose-us-images .col-md-4:nth-of-type(2) {
-  margin-top: -8rem;
+  margin-top: -4rem;
 }
 
 /* Decorative curved lines on the right */
@@ -5321,3 +5377,104 @@ span.colored-heading {
   .why-choose__panel::before,
   .why-choose__panel::after { display: none; }
 }
+
+
+
+
+/*********************
+  Hero Infographic Style
+*********************/
+
+/*.right-tab {*/
+/*  background-image: url("assets/images/hero-bg-01.png");*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*  min-height: 100vh;*/
+/*  margin-top: -27%;*/
+/*  z-index: 2;*/
+/*  position: relative;*/
+/*  width: 100%;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+
+
+.hero-info-wrapper > .container, .hero-info-wrapper > .container > .row {
+  height: 100%;
+}
+
+
+
+.right-tab-wrapper h4 {
+  font-family: 'Saudia Sans';
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.right-tab-wrapper .subtitle {
+  color: #989898;
+}
+
+.right-tab-wrapper {
+  gap: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+}
+
+.right-tab {
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  border-top-left-radius: 180px;
+  padding: 5rem;
+}
+
+.right-tab-wrapper p {
+  font-family: 'Saudia Sans';
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 28px;
+  color: var(--Text-Body, rgba(88, 88, 88, 1));
+}
+
+.tabs-data {
+  display: flex;
+  flex-flow: wrap;
+  gap: 1rem;
+}
+
+.right-tab-wrapper .btn {
+  width: fit-content;
+  font-size: 1rem;
+  font-family: 'Saudia Sans';
+}
+
+.left-tab .btn {
+  font-family: 'Saudia Sans';
+  font-size: 1.1rem;
+}
+
+.tabs-data .tab {
+  min-width: auto;
+  border-radius: 5.66px;
+  opacity: 1;
+  padding: 10px;
+  border-width: 0.35px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
+  border: 0.35px solid rgba(219, 234, 254, 1);
+  font-family: 'Saudia Sans';
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: center;
+  color: rgba(13, 152, 212, 1);
+}
+
+
+

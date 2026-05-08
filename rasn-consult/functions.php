@@ -3524,6 +3524,13 @@ acf_add_local_field_group(array(
                             'preview_size' => 'medium',
                         ),
                         array(
+                            'key' => 'field_left_content_tab',
+                            'label' => 'Left Content',
+                            'type' => 'tab',
+                            'placement' => 'top', // top or left
+                            'endpoint' => 0,
+                        ),
+                        array(
                             'key'   => 'field_hi_title',
                             'label' => 'Title',
                             'name'  => 'title',
@@ -3593,6 +3600,13 @@ acf_add_local_field_group(array(
                                 ),
                             ),
                         ),
+                        array(
+                            'key' => 'field_right_content_tab',
+                            'label' => 'Right Content',
+                            'type' => 'tab',
+                            'placement' => 'top', // top or left
+                            'endpoint' => 0,
+                        ),
                     ),
                     'min' => '',
                     'max' => '',
@@ -3630,6 +3644,14 @@ acf_add_local_field_group(array(
                             'color_palette' => '',
                             'hide_palette' => 0,
                             'allow_in_bindings' => 1,
+                        ),
+                        array(
+                            'key' => 'field_inner_bg_image',
+                            'label' => 'Inner Background Image',
+                            'name' => 'inner_background_image',
+                            'type' => 'image',
+                            'return_format' => 'url',
+                            'preview_size' => 'medium',
                         ),
                         array(
                             'key' => 'field_why_choose_title',

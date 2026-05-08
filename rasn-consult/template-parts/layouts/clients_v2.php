@@ -20,12 +20,13 @@ endif;
 
 
 $logos = get_sub_field('logos');
+$stats = get_sub_field('stats');
 
 ?>
 
 <section class="our-clients py-5" <?= $section_style ?>>
     <div class="container p-0">
-        <div class="our-clients__panel rounded-4" <?= $inner_section_style ?> >
+        <div class="our-clients__panel" <?= $inner_section_style ?> >
             <div class="text-center mb-4">
                 <?php if($title): ?>
                 <h2 class="our-clients__title fw-bold mb-3"><?= $title ?></h2>
@@ -38,31 +39,27 @@ $logos = get_sub_field('logos');
                 <?php endif; ?>
             </div>
 
-            <div class="row g-3 g-md-4 mb-5">
-                <div class="col-12 col-md-4">
-                    <div class="our-clients__stat rounded-4 h-100 d-flex align-items-center justify-content-center text-center px-4 py-4">
-                        97% Project Success Rate with on-time delivery
-                    </div>
+            <?php if( !empty($stats) ): ?>
+                <div class="row g-3 g-md-4 mb-5">
+                    <?php foreach ($stats as $stat): ?>
+                        <div class="col-12 col-md-4">
+                            <div class="our-clients__stat rounded-4 h-100 d-flex align-items-center justify-content-center text-center px-4 py-4">
+                                <?= $stat['stat_text'] ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="our-clients__stat rounded-4 h-100 d-flex align-items-center justify-content-center text-center px-4 py-4">
-                        40% Average Efficiency Improvement for their operations
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="our-clients__stat rounded-4 h-100 d-flex align-items-center justify-content-center text-center px-4 py-4">
-                        1-Month Quality Warranty on all development work
-                    </div>
-                </div>
-            </div>
+            <?php endif; ?>
 
             <?php if( !empty($logos) ): ?>
-            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 align-items-center justify-content-center our-clients__logos">
+            <div class="row align-items-center justify-content-center our-clients__logos">
                 <?php foreach ( $logos as $logo ): ?>
-                    <div class="col text-center"><img src="<?= esc_url($logo) ?>" alt="" class="img-fluid" /></div>
+                    <img src="<?= esc_url($logo) ?>" alt="" class="img-fluid" />
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>
         </div>
     </div>
 </section>
+
+

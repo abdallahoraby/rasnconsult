@@ -5143,7 +5143,7 @@ span.colored-heading {
 
 .our-clients__panel {
   background: linear-gradient(135deg, var(--oc-bg-start), var(--oc-bg-end));
-  border: 1px solid var(--oc-border);
+  border-radius: 20px;
   padding: 3rem 5rem;
 }
 
@@ -5175,11 +5175,10 @@ span.colored-heading {
 }
 
 .our-clients__logos img {
-  max-height: 48px;
+  max-height: max-content;
   width: auto;
   object-fit: contain;
-  filter: grayscale(0);
-  opacity: 0.95;
+  opacity: 1;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 

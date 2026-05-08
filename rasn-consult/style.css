@@ -5175,11 +5175,15 @@ span.colored-heading {
 }
 
 .our-clients__logos img {
-  max-height: max-content;
   width: auto;
   object-fit: contain;
   opacity: 1;
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.our-clients__logos .slick-track img {
+  height: 4rem;
+  object-fit: contain;
 }
 
 .our-clients__logos img:hover {

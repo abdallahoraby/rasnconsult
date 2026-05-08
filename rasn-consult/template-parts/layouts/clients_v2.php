@@ -52,7 +52,7 @@ $stats = get_sub_field('stats');
             <?php endif; ?>
 
             <?php if( !empty($logos) ): ?>
-            <div class="row align-items-center justify-content-center our-clients__logos">
+            <div class="row align-items-center justify-content-center our-clients__logos clients-logo-v2-slider">
                 <?php foreach ( $logos as $logo ): ?>
                     <img src="<?= esc_url($logo) ?>" alt="" class="img-fluid" />
                 <?php endforeach; ?>
@@ -61,5 +61,46 @@ $stats = get_sub_field('stats');
         </div>
     </div>
 </section>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+        if ($('.clients-logo-v2-slider').length) {
+            $('.clients-logo-v2-slider').not('.slick-initialized').slick({
+                dots: false,
+                arrows: false,
+                infinite: true,
+                speed: 800,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                pauseOnHover: true,
+                adaptiveHeight: true,
+                cssEase: 'linear',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 4,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    }
+                ]
+            });
+        }
+    });
+</script>
 
 

@@ -1,14 +1,14 @@
 <?php
 
-    $title = get_sub_field('title');
-    $description = get_sub_field('description');
-    $hi_background_image = get_sub_field('hi_background_image');
-    $buttons = get_sub_field('buttons');
+$title = get_sub_field('title');
+$description = get_sub_field('description');
+$hi_background_image = get_sub_field('hi_background_image');
+$buttons = get_sub_field('buttons');
 
-    $section_style = '';
-    if( $hi_background_image ):
-        $section_style .= ' style="background-image: url(' . $hi_background_image . ');"';
-    endif;
+$section_style = '';
+if( $hi_background_image ):
+    $section_style .= ' style="background-image: url(' . $hi_background_image . ');"';
+endif;
 
 ?>
 
@@ -59,4 +59,33 @@
 
         </div>
     </div>
+
+    <div class="hero-counters-wrapper">
+        <div class="has-wavy-circle"></div>
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <div class="col-ld-6 col-md-6 col-sm-12 col-xs-12">
+                    <img src="https://placehold.co/700x500" alt="">
+                </div>
+
+                <div class="col-ld-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="counters-grid">
+                        <div class="counter-card">
+                            <strong>50+</strong>
+                            <span> Expert Developers </span>
+                        </div>
+                        <div class="counter-card">
+                            <strong>50+</strong>
+                            <span> Expert Developers </span>
+                        </div>
+                        <div class="counter-card">
+                            <strong>50+</strong>
+                            <span> Expert Developers </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>

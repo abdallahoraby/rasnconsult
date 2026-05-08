@@ -405,6 +405,32 @@ acf_add_local_field_group(array(
 						),
 					),
 				),
+                // Layout: Services V2
+                'layout_services_v2' => array(
+                    'key' => 'layout_services_v2',
+                    'name' => 'services_v2',
+                    'label' => 'Services Section V2',
+                    'display' => 'block',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_section_id_31',
+                            'label' => 'Section ID',
+                            'name' => 'section_id',
+                            'type' => 'text',
+                            'instructions' => 'use the ID with the right nav menu to scroll to section'
+                        ),
+                        array(
+                            'key' => 'field_bg_color_31',
+                            'label' => 'Background Color',
+                            'name' => 'background_color',
+                            'type' => 'extended-color-picker',
+                            'default_value' => '',
+                            'color_palette' => '',
+                            'hide_palette' => 0,
+                            'allow_in_bindings' => 1,
+                        ),
+                    ),
+                ),
 				// Layout: Consulting Section
 				'layout_consulting' => array(
 					'key' => 'layout_consulting',
@@ -705,6 +731,70 @@ acf_add_local_field_group(array(
 						),
 					),
 				),
+                // Layout: Clients V2 Section
+                'layout_clients_v2' => array(
+                    'key' => 'layout_clients_v2',
+                    'name' => 'clients_v2',
+                    'label' => 'Clients V2 Section',
+                    'display' => 'block',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_section_id_33',
+                            'label' => 'Section ID',
+                            'name' => 'section_id',
+                            'type' => 'text',
+                            'instructions' => 'use the ID with the right nav menu to scroll to section'
+                        ),
+                        array(
+                            'key' => 'field_bg_color_33',
+                            'label' => 'Background Color',
+                            'name' => 'background_color',
+                            'type' => 'extended-color-picker',
+                            'default_value' => '',
+                            'color_palette' => '',
+                            'hide_palette' => 0,
+                            'allow_in_bindings' => 1,
+                        ),
+                        array(
+                            'key' => 'field_client_v2_title',
+                            'label' => 'Section Title',
+                            'name' => 'title',
+                            'type' => 'text',
+                            'default_value' => 'Our Clients',
+                        ),
+                        array(
+                            'key' => 'field_client_v2_desc',
+                            'label' => 'Lead Text',
+                            'name' => 'lead_text',
+                            'type' => 'textarea',
+                            'rows' => 3,
+                        ),
+                        array(
+                            'key' => 'field_client_v2_stats',
+                            'label' => 'Stats Bullets',
+                            'name' => 'stats',
+                            'type' => 'repeater',
+                            'layout' => 'table',
+                            'button_label' => 'Add Stat',
+                            'sub_fields' => array(
+                                array(
+                                    'key' => 'field_client_v2_stat_text',
+                                    'label' => 'Stat Text',
+                                    'name' => 'stat_text',
+                                    'type' => 'text',
+                                ),
+                            ),
+                        ),
+                        array(
+                            'key' => 'field_client_v2_logos',
+                            'label' => 'Client Logos',
+                            'name' => 'logos',
+                            'type' => 'gallery',
+                            'return_format' => 'url',
+                            'insert' => 'append',
+                        ),
+                    ),
+                ),
 				// Layout: Feature Cards
 				'layout_feature_cards' => array(
 					'key'     => 'layout_feature_cards',
@@ -1950,6 +2040,15 @@ acf_add_local_field_group(array(
                             'allow_in_bindings' => 1,
                         ),
                         array(
+                            'key'   => 'field_cta_image',
+                            'label' => 'Background Image ',
+                            'name'  => 'image',
+                            'type'  => 'image',
+                            'return_format' => 'url',
+                            'preview_size'  => 'medium',
+                            'conditional_logic' => 0,
+                        ),
+                        array(
                             'key'   => 'field_cta_border_radius',
                             'label' => 'Border Radius (px)',
                             'name'  => 'cta_border_radius',
@@ -2018,7 +2117,7 @@ acf_add_local_field_group(array(
                             'key'           => 'field_cta_btn_bg_color',
                             'label'         => 'Button Background Color',
                             'name'          => 'btn_bg_color',
-                            'type'          => 'color_picker',
+                            'type'          => 'extended-color-picker',
                             'default_value' => '',
                         ),
                         array(
@@ -3484,6 +3583,17 @@ acf_add_local_field_group(array(
                                 ),
                             ),
                         ),
+                    ),
+                    'min' => '',
+                    'max' => '',
+                ),
+                // New Layout: Why Choose Us
+                'layout_why_choose_us' => array(
+                    'key' => 'layout_why_choose_us',
+                    'name' => 'why_choose_us',
+                    'label' => 'Why Choose Us',
+                    'display' => 'block',
+                    'sub_fields' => array(
                     ),
                     'min' => '',
                     'max' => '',

@@ -36,20 +36,20 @@ $why_choose_images = get_sub_field('why_choose_images');
             <div class="row justify-content-center text-center position-relative">
                 <div class="col-lg-9">
                     <?php if(!empty($title)): ?>
-                        <h2 class="why-choose__title fw-bold mb-3">
+                        <h2 class="why-choose__title fw-bold mb-3" data-aos="fade-up">
                             <?= $title ?>
                         </h2>
                     <?php endif; ?>
 
                     <?php if(!empty($description)): ?>
-                        <p class="why-choose__lead text-secondary mb-4">
+                        <p class="why-choose__lead text-secondary mb-4" data-aos="fade-up">
                             <?= $description ?>
                         </p>
                     <?php endif; ?>
 
 
                     <?php if ( get_sub_field('buttons') ) : ?>
-                        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
+                        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5" data-aos="fade-up">
                             <?php foreach ( get_sub_field('buttons') as $button ) :
                                 $link = $button['link'];
                                 if ( $link ) :
@@ -72,8 +72,8 @@ $why_choose_images = get_sub_field('why_choose_images');
         <?php if( !empty($why_choose_images) ): ?>
             <div class="choose-us-images">
                     <div class="row g-4">
-                    <?php foreach ( $why_choose_images as $why_choose_image ): ?>
-                        <div class="col-md-4">
+                    <?php foreach ( $why_choose_images as $key=>$why_choose_image ): ?>
+                        <div class="col-md-4" data-aos="fade-up">
                             <figure class="why-choose__card rounded-4 overflow-hidden m-0 shadow-sm">
                                 <img
                                     src="<?= $why_choose_image['url'] ?>"

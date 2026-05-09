@@ -18,7 +18,7 @@ endif;
 
 
     <?php if($title): ?>
-        <h2 class="section-title"><?= $title ?></h2>
+        <h2 class="section-title" data-aos="fade-up"><?= $title ?></h2>
     <?php endif; ?>
 
 

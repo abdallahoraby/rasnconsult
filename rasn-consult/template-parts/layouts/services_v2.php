@@ -24,7 +24,7 @@ endif;
 
         <?php if(!empty($service_rows)): ?>
             <div class="services__grid">
-                <?php foreach ($service_rows as $service_row): ?>
+                <?php foreach ($service_rows as $key=>$service_row): ?>
                     <?php
                         if( isset($service_row['link']) ):
                             $url_link = $service_row['link']['url'];
@@ -32,7 +32,7 @@ endif;
                             $url_link = '#';
                         endif;
                     ?>
-                    <a href="<?= $url_link ?>" class="service-card">
+                    <a href="<?= $url_link ?>" class="service-card" data-aos="fade-up" data-aos-duration="<?= ($key+1) * 500 ?>">
                         <div class="service-card__header">
                             <span class="service-card__number"><?= $service_row['number'] ?></span>
                             <div class="service-card__text">

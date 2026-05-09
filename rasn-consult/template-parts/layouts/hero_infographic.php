@@ -28,7 +28,7 @@ endif;
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
-                    <div class="left-tab d-flex flex-column gap-4 justify-content-center">
+                    <div class="left-tab d-flex flex-column gap-4 justify-content-center" data-aos="fade-right">
                         <?= wp_kses_post($title) ?>
                         <p><?= $description ?></p>
 
@@ -54,7 +54,7 @@ endif;
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="right-tab">
+                    <div class="right-tab" data-aos="fade-left">
                         <div class="right-tab-wrapper">
                             <?php if($sub_title): ?>
                                 <div class="sutitle"><?= $sub_title ?></div>
@@ -108,7 +108,7 @@ endif;
             <div class="row">
                 <div class="col-ld-6 col-md-6 col-sm-12 col-xs-12">
                     <?php if( $hi_bottom_image ): ?>
-                        <img src="<?= $hi_bottom_image ?>" alt="">
+                        <img src="<?= $hi_bottom_image ?>" alt="" data-aos="fade-up">
                     <?php endif; ?>
                 </div>
 
@@ -116,7 +116,7 @@ endif;
                     <?php if(!empty($info_counters)): ?>
                         <div class="counters-grid">
                             <?php foreach ($info_counters as $counter): ?>
-                                <div class="counter-card">
+                                <div class="counter-card" data-aos="fade-left">
                                     <strong><?= $counter['hi_info_counter_number'] ?><?= $counter['hi_info_counter_suffix'] ?></strong>
                                     <span> <?= $counter['hi_info_counter_text'] ?> </span>
                                 </div>

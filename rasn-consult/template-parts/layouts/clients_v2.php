@@ -29,11 +29,11 @@ $stats = get_sub_field('stats');
         <div class="our-clients__panel" <?= $inner_section_style ?> >
             <div class="text-center mb-4">
                 <?php if($title): ?>
-                <h2 class="our-clients__title fw-bold mb-3"><?= $title ?></h2>
+                <h2 class="our-clients__title fw-bold mb-3" data-aos="fade-up" ><?= $title ?></h2>
                 <?php endif; ?>
 
                 <?php if($description): ?>
-                <p class="our-clients__lead mb-1">
+                <p class="our-clients__lead mb-1" data-aos="fade-up" >
                     <?= $description ?>
                 </p>
                 <?php endif; ?>
@@ -42,7 +42,7 @@ $stats = get_sub_field('stats');
             <?php if( !empty($stats) ): ?>
                 <div class="row g-3 g-md-4 mb-5">
                     <?php foreach ($stats as $stat): ?>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-4" data-aos="fade-up">
                             <div class="our-clients__stat rounded-4 h-100 d-flex align-items-center justify-content-center text-center px-4 py-4">
                                 <?= $stat['stat_text'] ?>
                             </div>

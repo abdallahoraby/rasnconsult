@@ -2757,6 +2757,92 @@ main.landing-page.schema-secondary {
   .landing-copy h1 {
     font-size: 2rem;
   }
+
+  .hero-info-wrapper > .container, .hero-info-wrapper > .container > .row {
+    height: initial;
+  }
+
+  .right-tab {
+    background: #fff;
+    position: relative !important;
+    bottom: initial !important;
+    right: initial !important;
+    width: 100% !important;
+    border-top-left-radius: 0 !important;
+    padding: 2rem !important;
+    margin-top: 3rem !important;
+    border-radius: 20px !important;
+  }
+
+  .left-tab {
+    padding: 5rem 2rem 1rem 2rem !important;
+    width: 100% !important;
+  }
+
+  .hero-info-wrapper h1 {
+    font-size: 3rem !important;
+  }
+
+  .hero-info-wrapper h3, .hero-info-wrapper h3 * {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-info-wrapper h3 br{
+    display: none !important;
+  }
+
+  .hero-counters-wrapper {
+    margin: 0 !important;
+    padding: 0 1rem;
+  }
+
+  .counters-grid {
+    flex-flow: column;
+    margin: 1rem 0 0;
+  }
+
+  .counters-grid .counter-card {
+    width: 60% !important;
+  }
+
+  .why-choose {
+    margin-top: 0 !important;
+    padding: 1rem !important;
+  }
+
+
+  .service-card {
+    padding: 1rem !important;
+  }
+
+  .services-v2-section {
+    padding: 1rem !important;
+  }
+
+  .has-wavy-circle {
+    display: none;
+  }
+
+  .hero-info-wrapper {
+    height: auto !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .tabs-data .tab {
+    padding: 8px !important;
+    font-size: 0.9rem;
+  }
+
+  .tabs-data {
+    display: flex;
+    flex-flow: wrap;
+    gap: 0.5rem;
+  }
+
+
+
+
+
 }
 
 .landing-copy h1 span {
@@ -3126,8 +3212,34 @@ main.landing-page.schema-secondary {
 
 @media screen and (max-width: 900px){
   .cta-section {
-    width: 95%;
+    width: 92%;
   }
+
+  section.our-clients {
+    padding: 1rem !important;
+  }
+
+  .testimonials-v2 {
+    padding: 2rem !important;
+  }
+
+  .testimonials-v2 .card-stack::before {
+    width: calc(100% + 2rem) !important;
+    height: 82%;
+    top: 2rem;
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonials-v2 .card-stack::after {
+    width: calc(100% + 1rem) !important;
+    height: 89%;
+    top: 1rem;
+    background: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+
+
 }
 
 .cta-inner {
@@ -5298,7 +5410,7 @@ span.colored-heading {
   }
 
   .choose-us-images .col-md-4:nth-of-type(2) {
-    margin-top: 2rem;
+    margin-top: 2rem !important;
   }
 }
 

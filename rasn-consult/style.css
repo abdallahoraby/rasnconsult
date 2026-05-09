@@ -5480,4 +5480,206 @@ span.colored-heading {
 }
 
 
+/***********************
+  Testimonials V2 Styles
+**********************/
+
+.testimonials-v2 {
+  display: flex;
+  flex-flow: column;
+  gap: 5rem;
+  padding: 5rem 0 2rem 0;
+}
+
+
+.testimonials-v2 .section-title {
+  font-family: 'Saudia Sans';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  color: #000;
+}
+
+/* ── Outer wrapper controls the visible width ── */
+.testimonials-v2 .testimonials-wrapper {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+/* ── The Slick track needs overflow visible for stack peek ── */
+.testimonials-v2 .testimonials-slider {
+  position: relative;
+}
+
+.testimonials-v2 .testimonials-slider .slick-list {
+  overflow: visible !important;
+}
+
+/* ── Hide slides that aren't current/adjacent ── */
+.testimonials-v2 .testimonials-slider .slick-slide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.testimonials-v2 .testimonials-slider .slick-current {
+  opacity: 1 !important;
+  pointer-events: all !important;
+  z-index: 10;
+  position: relative;
+}
+
+/* ── Stack ghost cards behind the active card (peeking from the bottom) ── */
+.testimonials-v2 .card-stack {
+  position: relative;
+  padding-bottom: 28px; /* room for ghost cards to peek below */
+}
+
+.testimonials-v2 .card-stack::before,
+.testimonials-v2 .card-stack::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+/* Second card — closer peek */
+.testimonials-v2 .card-stack::before {
+  width: calc(100% + 6rem);
+  height: 82%;
+  top: 2rem;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Third card — furthest peek */
+.testimonials-v2 .card-stack::after {
+  width: calc(100% + 3rem);
+  height: 89%;
+  top: 1rem;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* ── Main card ── */
+.testimonials-v2 .testimonial-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 52px 44px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.09), 0 2px 8px rgba(0,0,0,0.04);
+  text-align: center;
+  min-height: 360px;
+}
+
+/* Avatar */
+.testimonials-v2 .avatar-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.testimonials-v2 .avatar-wrap img {
+  border-radius: 100%;
+  object-fit: cover;
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-width: 1px;
+  border: 1px solid rgba(47, 167, 225, 0.4);
+  margin-top: -6rem;
+}
+
+.testimonials-v2 .name {
+  font-family: 'Saudia Sans';
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #3D3D3D;
+  margin-bottom: 1rem;
+}
+
+
+.testimonials-v2 .testimonial-text {
+  color: #737373;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: 'Saudia Sans';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4rem;
+  text-align: center;
+}
+
+/* ── Navigation arrows ── */
+.testimonials-v2 .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  border-radius: 100%;
+  background: #fff !important;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  outline: none;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.testimonials-v2 .nav-btn:hover {
+  background: #1a1a1a;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  transform: translateY(-60%) scale(1.07);
+}
+
+.testimonials-v2 .nav-btn svg { width: 18px; height: 18px; }
+.testimonials-v2 .nav-btn svg path { stroke: #1a1a1a; stroke-width: 2; fill: none; transition: stroke 0.2s; }
+
+.testimonials-v2 .nav-prev { left: 10rem; }
+.testimonials-v2 .nav-next { right: 10rem; }
+
+
+.testimonials-v2 .slick-dots li button:before {
+  font-size: 8px;
+  color: #c9b99a;
+  opacity: 0.4;
+}
+
+.testimonials-v2 .slick-dots li.slick-active button:before {
+  color: #c9b99a;
+  opacity: 1;
+}
+
+/* Transition animation */
+.testimonials-v2 .testimonials-slider .slick-current .testimonial-card {
+  animation: cardIn 0.45s cubic-bezier(0.34, 1.26, 0.64, 1) both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+@media (max-width: 600px) {
+  .testimonials-v2 .testimonial-card { padding: 36px 28px 32px; }
+  .testimonials-v2 .nav-prev { left: -16px; }
+  .testimonials-v2 .nav-next { right: -16px; }
+  .testimonials-v2 .nav-btn  { width: 38px; height: 38px; }
+}
 

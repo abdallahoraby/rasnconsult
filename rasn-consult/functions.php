@@ -708,6 +708,89 @@ acf_add_local_field_group(array(
 						),
 					),
 				),
+                // Layout: Testimonials V2 Section
+                'layout_testimonials_v2_new' => array(
+                    'key' => 'layout_testimonials_v2_new',
+                    'name' => 'testimonials_v2_new',
+                    'label' => 'Testimonials V2 Section',
+                    'display' => 'block',
+                    'sub_fields' => array(
+                        array(
+                            'key' => 'field_section_id_38',
+                            'label' => 'Section ID',
+                            'name' => 'section_id',
+                            'type' => 'text',
+                            'instructions' => 'use the ID with the right nav menu to scroll to section'
+                        ),
+                        array(
+                            'key' => 'field_bg_color_38',
+                            'label' => 'Background Color',
+                            'name' => 'background_color',
+                            'type' => 'extended-color-picker',
+                            'default_value' => '',
+                            'color_palette' => '',
+                            'hide_palette' => 0,
+                            'allow_in_bindings' => 1,
+                        ),
+                        array(
+                            'key' => 'field_testi_v2_title',
+                            'label' => 'Section Title',
+                            'name' => 'title',
+                            'type' => 'text',
+                            'default_value' => 'Proven Results, Delighted Clients',
+                        ),
+                        array(
+                            'key' => 'field_testi_v2_lead',
+                            'label' => 'Lead Text (Subtitle)',
+                            'name' => 'lead_text',
+                            'type' => 'textarea',
+                            'rows' => 3,
+                        ),
+                        array(
+                            'key' => 'field_testi_v2_btn_text',
+                            'label' => 'CTA Button Text',
+                            'name' => 'button_text',
+                            'type' => 'text',
+                            'default_value' => 'Start Your Success Story',
+                        ),
+                        array(
+                            'key' => 'field_testi_v2_btn_link',
+                            'label' => 'CTA Button Link',
+                            'name' => 'button_link',
+                            'type' => 'link',
+                        ),
+                        array(
+                            'key' => 'field_testi_v2_slides',
+                            'label' => 'Testimonial Slides',
+                            'name' => 'slides',
+                            'type' => 'repeater',
+                            'layout' => 'block',
+                            'button_label' => 'Add Testimonial',
+                            'sub_fields' => array(
+                                array(
+                                    'key' => 'field_testi_v2_avatar',
+                                    'label' => 'Avatar Image',
+                                    'name' => 'avatar',
+                                    'type' => 'image',
+                                    'return_format' => 'url',
+                                ),
+                                array(
+                                    'key' => 'field_testi_v2_quote',
+                                    'label' => 'Quote Text',
+                                    'name' => 'quote',
+                                    'type' => 'textarea',
+                                    'rows' => 4,
+                                ),
+                                array(
+                                    'key' => 'field_testi_v2_name',
+                                    'label' => 'Author Name',
+                                    'name' => 'name',
+                                    'type' => 'text',
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
 				// Layout: Clients Section
 				'layout_clients' => array(
 					'key' => 'layout_clients',

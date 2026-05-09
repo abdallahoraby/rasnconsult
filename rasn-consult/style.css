@@ -836,7 +836,6 @@ nav.nav a {
 }
 
 .why-choose {
-  margin-top: 64px;
   align-items: center;
 }
 
@@ -5315,6 +5314,10 @@ span.colored-heading {
 
 .choose-us-images .col-md-4:nth-of-type(2) {
   margin-top: -4rem;
+}
+
+.right-tab .sutitle {
+  color: rgba(152, 152, 152, 1);
 }
 
 /* Decorative curved lines on the right */

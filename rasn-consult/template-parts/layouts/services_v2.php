@@ -3,87 +3,53 @@
  * Layout: Services V2 Section
  */
 
+
+$title = get_sub_field('title');
+$service_rows = get_sub_field('service_rows');
+
 $section_style = '';
 $background_color = get_sub_field('background_color');
 if( $background_color ):
-    $section_style .= ' style="background: ' . esc_attr($background_color) . ';"';
+    $section_style .= ' style="background: ' . $background_color . ';"';
 endif;
 ?>
 
 <!-- ====== SERVICES V2 SECTION ====== -->
 <section class="services-v2-section" id="<?= get_sub_field('section_id') ?? '' ?>" <?= $section_style ?> >
     <div class="container">
-        <h2 class="services__title">Services Offerings</h2>
 
-        <div class="services__grid">
-            <article class="service-card">
-                <div class="service-card__header">
-                    <span class="service-card__number">01</span>
-                    <div class="service-card__text">
-                        <h3 class="service-card__title">Web &amp; App Development</h3>
-                        <p class="service-card__desc">
-                            We deliver full-stack, tailored software development solutions
-                            that streamline operations, enhance customer engagement, and
-                            accelerate digital transformation.
-                        </p>
-                    </div>
-                </div>
-                <div class="service-card__media">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=70" alt="Web and app development" />
-                </div>
-            </article>
+        <?php if( !empty($title)): ?>
+            <h2 class="services__title"><?= $title ?></h2>
+        <?php endif; ?>
 
-            <article class="service-card">
-                <div class="service-card__header">
-                    <span class="service-card__number">02</span>
-                    <div class="service-card__text">
-                        <h3 class="service-card__title">IT Outsourcing</h3>
-                        <p class="service-card__desc">
-                            We provide IT outsourcing services that connect your business
-                            with senior, dedicated remote developers in Egypt, delivering
-                            European-quality software development.
-                        </p>
-                    </div>
-                </div>
-                <div class="service-card__media">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=70" alt="IT outsourcing" />
-                </div>
-            </article>
+        <?php if(!empty($service_rows)): ?>
+            <div class="services__grid">
+                <?php foreach ($service_rows as $service_row): ?>
+                    <?php
+                        if( isset($service_row['link']) ):
+                            $url_link = $service_row['link']['url'];
+                        else:
+                            $url_link = '#';
+                        endif;
+                    ?>
+                    <a href="<?= $url_link ?>" class="service-card">
+                        <div class="service-card__header">
+                            <span class="service-card__number"><?= $service_row['number'] ?></span>
+                            <div class="service-card__text">
+                                <h3 class="service-card__title"><?= $service_row['text'] ?></h3>
+                                <p class="service-card__desc">
+                                    <?= $service_row['body'] ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-card__media">
+                            <img src="<?= $service_row['image'] ?>" alt="Web and app development" />
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        <?php endif;?>
 
-            <article class="service-card">
-                <div class="service-card__header">
-                    <span class="service-card__number">03</span>
-                    <div class="service-card__text">
-                        <h3 class="service-card__title">Accounting ERP</h3>
-                        <p class="service-card__desc">
-                            Transition from manual record-keeping to data-driven strategic
-                            insight with our cloud accounting software implementation
-                            services.
-                        </p>
-                    </div>
-                </div>
-                <div class="service-card__media">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=70" alt="Accounting ERP" />
-                </div>
-            </article>
-
-            <article class="service-card">
-                <div class="service-card__header">
-                    <span class="service-card__number">04</span>
-                    <div class="service-card__text">
-                        <h3 class="service-card__title">Business Consulting</h3>
-                        <p class="service-card__desc">
-                            Our expert consultants work closely with your leadership team
-                            to design and execute data-driven digital transformation
-                            strategies that deliver measurable ROI.
-                        </p>
-                    </div>
-                </div>
-                <div class="service-card__media">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=70" alt="Business consulting" />
-                </div>
-            </article>
-        </div>
     </div>
 </section>
 <!-- ====== END SERVICES V2 SECTION ====== -->
